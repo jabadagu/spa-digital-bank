@@ -25,7 +25,7 @@ Una aplicación web moderna para servicios bancarios digitales construida con Re
 
 ## 🌐 Demo Live
 
-🔗 **[Ver aplicación en vivo](https://jabadagu.github.io/)**
+🔗 **[Ver aplicación en vivo](https://jabadagu.github.io/app/)**
 
 ## 📦 Instalación
 
