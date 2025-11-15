@@ -1,14 +1,17 @@
+import axios from 'axios';
 import i18n from '@/i18n/config';
 import type { ApiResponse, Product } from '@/types';
+import { getApiBaseUrl } from '@/utils/env';
 
 class ApiService {
   async getProducts(): Promise<Product[]> {
-    const response = await fetch('/mock/products.json');
-    if (!response.ok) {
+    try {
+      const response = await axios.get(`${getApiBaseUrl()}mock/products.json`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching products:', error);
       throw new Error(i18n.t('api.loadProductsError'));
     }
-    const products: Product[] = await response.json();
-    return products;
   }
 
   async getProductById(id: string): Promise<Product | null> {

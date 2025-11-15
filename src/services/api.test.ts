@@ -1,4 +1,9 @@
+import axios from 'axios';
 import { apiService } from './api';
+
+// Mock de axios
+jest.mock('axios');
+const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 // Mock de i18n
 jest.mock('@/i18n/config', () => ({
@@ -15,7 +20,6 @@ jest.mock('@/i18n/config', () => ({
 
 describe('ApiService', () => {
   beforeEach(() => {
-    global.fetch = jest.fn();
     jest.clearAllMocks();
     // Mock Math.random para hacer predecibles los tests de submitContactForm
     jest.spyOn(Math, 'random').mockReturnValue(0.5); // > 0.3, será success
@@ -27,9 +31,6 @@ describe('ApiService', () => {
   });
 
   afterEach(() => {
-    if (global.fetch && (global.fetch as jest.Mock).mockRestore) {
-      (global.fetch as jest.Mock).mockRestore();
-    }
     jest.restoreAllMocks();
   });
 
@@ -47,33 +48,28 @@ describe('ApiService', () => {
         },
       ];
 
-      // @ts-expect-error - Mocking global fetch
-      global.fetch.mockResolvedValueOnce({
-        ok: true,
-        json: async () => mockData,
+      mockedAxios.get.mockResolvedValueOnce({
+        data: mockData,
       });
 
       const products = await apiService.getProducts();
       expect(products).toEqual(mockData);
-      expect(global.fetch).toHaveBeenCalledWith('/mock/products.json');
+      expect(mockedAxios.get).toHaveBeenCalledWith('mock/products.json');
     });
 
     test('throws error when response is not ok', async () => {
-      // @ts-expect-error - Mocking global fetch
-      global.fetch.mockResolvedValueOnce({
-        ok: false,
-        status: 404,
+      mockedAxios.get.mockRejectedValueOnce({
+        response: { status: 404 },
       });
 
       await expect(apiService.getProducts()).rejects.toThrow('Error al cargar productos');
     });
 
-    test('throws error when fetch fails', async () => {
+    test('throws error when axios fails', async () => {
       const networkError = new Error('Network error');
-      // @ts-expect-error - Mocking global fetch
-      global.fetch.mockRejectedValueOnce(networkError);
+      mockedAxios.get.mockRejectedValueOnce(networkError);
 
-      await expect(apiService.getProducts()).rejects.toThrow('Network error');
+      await expect(apiService.getProducts()).rejects.toThrow('Error al cargar productos');
     });
   });
 
@@ -100,10 +96,8 @@ describe('ApiService', () => {
     ];
 
     beforeEach(() => {
-      // @ts-expect-error - Mocking global fetch
-      global.fetch.mockResolvedValue({
-        ok: true,
-        json: async () => mockProducts,
+      mockedAxios.get.mockResolvedValue({
+        data: mockProducts,
       });
     });
 
@@ -118,10 +112,9 @@ describe('ApiService', () => {
     });
 
     test('throws error when getProducts fails', async () => {
-      // @ts-expect-error - Mocking global fetch
-      global.fetch.mockRejectedValueOnce(new Error('Network error'));
+      mockedAxios.get.mockRejectedValueOnce(new Error('Network error'));
 
-      await expect(apiService.getProductById('1')).rejects.toThrow('Network error');
+      await expect(apiService.getProductById('1')).rejects.toThrow('Error al cargar productos');
     });
   });
 

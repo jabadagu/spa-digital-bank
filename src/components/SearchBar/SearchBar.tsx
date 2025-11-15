@@ -73,7 +73,7 @@ const SearchIcon = styled(motion.div)`
 const LoadingIndicator = styled(motion.div)`
   position: absolute;
   right: ${({ theme }) => theme.spacing.md};
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   color: ${({ theme }) => theme.colors.accent};
 
@@ -96,7 +96,7 @@ const LoadingIndicator = styled(motion.div)`
 const ClearButton = styled(motion.button)`
   position: absolute;
   right: ${({ theme }) => theme.spacing.md};
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   background: none;
   border: none;

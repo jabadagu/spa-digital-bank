@@ -7,11 +7,9 @@ jest.mock('react-router-dom', () => ({
   useLocation: () => ({
     pathname: '/spa-digital-bank/',
   }),
-  BrowserRouter: ({ children, basename }: { children: React.ReactNode; basename?: string }) => {
+  BrowserRouter: ({ children }: { children: React.ReactNode }) => {
     const MemoryRouter = jest.requireActual('react-router-dom').MemoryRouter;
-    return (
-      <MemoryRouter initialEntries={[basename || '/spa-digital-bank/']}>{children}</MemoryRouter>
-    );
+    return <MemoryRouter initialEntries={['/spa-digital-bank/']}>{children}</MemoryRouter>;
   },
 }));
 
