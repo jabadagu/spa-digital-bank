@@ -23,7 +23,7 @@ function App() {
   return (
     <ThemeProvider>
       <GlobalStyles />
-      <BrowserRouter basename="/app">
+      <BrowserRouter basename="/spa-digital-bank">
         <AppContainer>
           <NavBar />
           <MainContent>
