@@ -18,4 +18,15 @@ export const getEnvVar = (key: string, defaultValue = ''): string => {
   return defaultValue;
 };
 
-export const getApiBaseUrl = (): string => getEnvVar('VITE_API_BASE_URL', '');
+export const getApiBaseUrl = (): string => {
+  const baseUrl = getEnvVar('VITE_API_BASE_URL', '');
+  // Si no hay variable de entorno configurada, usar la ruta relativa correcta
+  if (!baseUrl) {
+    // En desarrollo con Vite, usar ruta relativa desde public/
+    if (typeof window !== 'undefined') {
+      return '/spa-digital-bank/';
+    }
+    return '';
+  }
+  return baseUrl;
+};
