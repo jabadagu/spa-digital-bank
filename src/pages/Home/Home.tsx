@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
 import { useProducts } from '@/hooks/useProducts';
-import { usePagination } from '@/hooks/usePagination';
+import { useSearchProducts } from '@/hooks/useSearchProducts';
 import { ProductCard } from '@/components/ProductCard';
+import { SearchBar } from '@/components/SearchBar';
 import { Loading } from '@/components/Loading';
 import { Error } from '@/components/Error';
-import { Pagination } from '@/components/Pagination';
 import { useTranslation } from 'react-i18next';
 import PageHeader from '@/components/PageHeader/PageHeader';
 import styled from 'styled-components';
-
-const ITEMS_PER_PAGE = 8;
 
 const Main = styled(motion.main)`
   flex: 1;
@@ -39,6 +37,38 @@ const Grid = styled(motion.div)`
   }
 `;
 
+const SearchResultsInfo = styled(motion.div)`
+  text-align: center;
+  margin: ${({ theme }) => theme.spacing.lg} 0;
+  padding: ${({ theme }) => theme.spacing.md};
+  color: ${({ theme }) => theme.colors.text.secondary};
+  font-size: ${({ theme }) => theme.typography.fontSize.sm};
+  background: ${({ theme }) => theme.colors.bg.secondary};
+  border-radius: ${({ theme }) => theme.borderRadius.md};
+  border-left: 4px solid ${({ theme }) => theme.colors.accent};
+`;
+
+const NoResultsMessage = styled(motion.div)`
+  text-align: center;
+  padding: ${({ theme }) => theme.spacing['3xl']} ${({ theme }) => theme.spacing.lg};
+  color: ${({ theme }) => theme.colors.text.secondary};
+
+  h3 {
+    color: ${({ theme }) => theme.colors.text.primary};
+    margin-bottom: ${({ theme }) => theme.spacing.md};
+    font-size: ${({ theme }) => theme.typography.fontSize.lg};
+  }
+
+  p {
+    font-size: ${({ theme }) => theme.typography.fontSize.base};
+    line-height: 1.6;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.md};
+  }
+`;
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -60,10 +90,10 @@ const itemVariants = {
 export const Home = () => {
   const { products, loading, error, refetch } = useProducts();
   const { t } = useTranslation();
-  const { currentPage, totalPages, paginatedItems, goToPage } = usePagination({
-    items: products,
-    itemsPerPage: ITEMS_PER_PAGE,
-  });
+
+  // Hook de búsqueda con debounce
+  const { searchQuery, setSearchQuery, debouncedQuery, filteredProducts, isSearching } =
+    useSearchProducts({ products, debounceTime: 300 });
 
   if (loading) {
     return <Loading />;
@@ -72,6 +102,10 @@ export const Home = () => {
   if (error) {
     return <Error message={t('home.error')} onRetry={refetch} />;
   }
+
+  const hasSearchQuery = debouncedQuery.trim().length > 0;
+  const hasResults = filteredProducts.length > 0;
+  const showNoResults = hasSearchQuery && !hasResults && !isSearching;
 
   return (
     <Main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
@@ -83,26 +117,72 @@ export const Home = () => {
         >
           <PageHeader title={t('home.title')} subtitle={t('home.subtitle')} />
         </motion.div>
-        <Grid
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          key={currentPage}
-          transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
-        >
-          {paginatedItems.map(product => (
-            <motion.div
-              key={product.id}
-              variants={itemVariants}
-              transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
+
+        <SearchBar
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          isSearching={isSearching}
+        />
+
+        {hasSearchQuery && !isSearching && (
+          <SearchResultsInfo
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {t('home.resultsCount', { count: filteredProducts.length })}
+          </SearchResultsInfo>
+        )}
+
+        {showNoResults ? (
+          <NoResultsMessage
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, type: 'spring' }}
+          >
+            <h3>{t('home.noResults')}</h3>
+            <p>
+              Intenta con otros términos de búsqueda o{' '}
+              <button
+                onClick={() => setSearchQuery('')}
+                style={{
+                  color: 'inherit',
+                  textDecoration: 'underline',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                ver todos los productos
+              </button>
+            </p>
+          </NoResultsMessage>
+        ) : (
+          <>
+            <Grid
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              key={debouncedQuery}
+              transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
             >
-              <ProductCard product={product} />
-            </motion.div>
-          ))}
-        </Grid>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
-          <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={goToPage} />
-        </motion.div>
+              {filteredProducts.map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  variants={itemVariants}
+                  transition={{
+                    duration: 0.5,
+                    type: 'spring',
+                    stiffness: 100,
+                    delay: index * 0.1,
+                  }}
+                >
+                  <ProductCard product={product} />
+                </motion.div>
+              ))}
+            </Grid>
+          </>
+        )}
       </Container>
     </Main>
   );

@@ -19,6 +19,7 @@ dist-ssr
 .vscode-test
 .node_modules
 .coverage
+coverage
 .DS_Store
 *.suo
 *.ntvs*

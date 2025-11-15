@@ -10,7 +10,13 @@
     "viewMore": "View more",
     "loading": "Loading products...",
     "error": "Error loading products",
-    "retry": "Try again"
+    "retry": "Try again",
+    "searchPlaceholder": "Search financial products...",
+    "searchLabel": "Search products",
+    "clearSearch": "Clear search",
+    "noResults": "No products found matching your search",
+    "resultsCount": "{{count}} product found",
+    "resultsCount_other": "{{count}} products found"
   },
   "product": {
     "back": "← Back to products",
@@ -91,13 +97,6 @@
       "requestConfig": "Error processing the request",
       "unknown": "An unexpected error has occurred"
     }
-  },
-  "pagination": {
-    "label": "Pagination",
-    "previous": "Previous",
-    "next": "Next",
-    "page": "Page",
-    "of": "of"
   },
   "theme": {
     "light": "Light",

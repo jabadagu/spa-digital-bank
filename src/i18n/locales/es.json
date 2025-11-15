@@ -10,7 +10,13 @@
     "viewMore": "Ver más",
     "loading": "Cargando productos...",
     "error": "Error al cargar los productos",
-    "retry": "Intentar nuevamente"
+    "retry": "Intentar nuevamente",
+    "searchPlaceholder": "Buscar productos financieros...",
+    "searchLabel": "Buscar productos",
+    "clearSearch": "Limpiar búsqueda",
+    "noResults": "No se encontraron productos que coincidan con tu búsqueda",
+    "resultsCount": "{{count}} producto encontrado",
+    "resultsCount_other": "{{count}} productos encontrados"
   },
   "product": {
     "back": "← Volver a productos",
@@ -91,13 +97,6 @@
       "requestConfig": "Error al procesar la solicitud",
       "unknown": "Ha ocurrido un error inesperado"
     }
-  },
-  "pagination": {
-    "label": "Paginación",
-    "previous": "Anterior",
-    "next": "Siguiente",
-    "page": "Página",
-    "of": "de"
   },
   "theme": {
     "light": "Claro",

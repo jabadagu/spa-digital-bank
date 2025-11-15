@@ -42,9 +42,4 @@ describe('Home Component', () => {
       expect(screen.getByText('Product 2')).toBeInTheDocument();
     });
   });
-
-  it('should render pagination component', () => {
-    render(<Home />);
-    expect(document.body).toBeInTheDocument();
-  });
 });

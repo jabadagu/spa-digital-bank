@@ -118,20 +118,5 @@
       "Opciones de pago adaptadas",
       "Preaprobación rápida"
     ]
-  },
-  {
-    "id": "9",
-    "title": "Cuenta Empresarial",
-    "description": "Cuenta bancaria diseñada para pequeñas y medianas empresas. Ofrece herramientas de gestión financiera, múltiples usuarios, y servicios exclusivos para facilitar la administración de tu negocio.",
-    "shortDescription": "Cuenta bancaria para pymes con herramientas de gestión y servicios exclusivos para tu negocio.",
-    "image": "https://images.unsplash.com/photo-1556741533-f6acd647d2fb?w=400&h=300&fit=crop",
-    "category": "Cuentas",
-    "features": [
-      "Múltiples usuarios autorizados",
-      "Herramientas de gestión financiera",
-      "Servicios exclusivos para empresas",
-      "Integración con software contable",
-      "Atención personalizada"
-    ]
   }
 ]
