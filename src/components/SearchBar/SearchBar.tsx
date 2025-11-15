@@ -40,9 +40,10 @@ const SearchInput = styled.input`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.typography.fontSize.sm};
-    padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
-    padding-left: ${({ theme }) => theme.spacing.xl};
+    font-size: ${({ theme }) => theme.typography.fontSize.base};
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.lg};
+    padding-left: ${({ theme }) => theme.spacing['3xl']};
+    min-height: 3.5rem;
   }
 `;
 
@@ -61,11 +62,11 @@ const SearchIcon = styled(motion.div)`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    left: ${({ theme }) => theme.spacing.sm};
+    left: ${({ theme }) => theme.spacing.lg};
 
     svg {
-      width: 16px;
-      height: 16px;
+      width: 20px;
+      height: 20px;
     }
   }
 `;
@@ -73,7 +74,7 @@ const SearchIcon = styled(motion.div)`
 const LoadingIndicator = styled(motion.div)`
   position: absolute;
   right: ${({ theme }) => theme.spacing.md};
-  top: 30%;
+  top: 32%;
   transform: translateY(-50%);
   color: ${({ theme }) => theme.colors.accent};
 
@@ -96,7 +97,7 @@ const LoadingIndicator = styled(motion.div)`
 const ClearButton = styled(motion.button)`
   position: absolute;
   right: ${({ theme }) => theme.spacing.md};
-  top: 30%;
+  top: 32%;
   transform: translateY(-50%);
   background: none;
   border: none;

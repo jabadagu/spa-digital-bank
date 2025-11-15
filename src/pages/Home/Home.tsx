@@ -106,6 +106,7 @@ export const Home = () => {
   const hasSearchQuery = debouncedQuery.trim().length > 0;
   const hasResults = filteredProducts.length > 0;
   const showNoResults = hasSearchQuery && !hasResults && !isSearching;
+  const showProducts = hasResults || !hasSearchQuery;
 
   return (
     <Main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
@@ -157,31 +158,35 @@ export const Home = () => {
               </button>
             </p>
           </NoResultsMessage>
-        ) : (
-          <>
-            <Grid
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              key={debouncedQuery}
-              transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
-            >
-              {filteredProducts.map((product, index) => (
-                <motion.div
-                  key={product.id}
-                  variants={itemVariants}
-                  transition={{
-                    duration: 0.5,
-                    type: 'spring',
-                    stiffness: 100,
-                    delay: index * 0.1,
-                  }}
-                >
-                  <ProductCard product={product} />
-                </motion.div>
-              ))}
-            </Grid>
-          </>
+        ) : null}
+
+        {showProducts && (
+          <Grid
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            key={`${debouncedQuery}-${filteredProducts.length}`}
+            transition={{
+              staggerChildren: 0.05,
+              delayChildren: 0.1,
+              duration: 0.3,
+            }}
+          >
+            {filteredProducts.map(product => (
+              <motion.div
+                key={product.id}
+                variants={itemVariants}
+                transition={{
+                  duration: 0.3,
+                  type: 'spring',
+                  stiffness: 150,
+                  damping: 20,
+                }}
+              >
+                <ProductCard product={product} />
+              </motion.div>
+            ))}
+          </Grid>
         )}
       </Container>
     </Main>

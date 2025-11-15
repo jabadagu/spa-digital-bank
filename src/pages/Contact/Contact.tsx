@@ -82,6 +82,12 @@ const Input = styled.input<{ $hasError?: boolean }>`
   &::placeholder {
     color: ${({ theme }) => theme.colors.text.tertiary};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: ${({ theme }) => theme.spacing.lg};
+    font-size: ${({ theme }) => theme.typography.fontSize.base};
+    min-height: 3.5rem;
+  }
 `;
 
 const Select = styled.select<{ $hasError?: boolean }>`
@@ -106,6 +112,12 @@ const Select = styled.select<{ $hasError?: boolean }>`
         $hasError
           ? 'rgba(220, 53, 69, 0.1)'
           : theme.colors.accentLight || 'rgba(74, 158, 255, 0.1)'};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: ${({ theme }) => theme.spacing.lg};
+    font-size: ${({ theme }) => theme.typography.fontSize.base};
+    min-height: 3.5rem;
   }
 `;
 
@@ -136,6 +148,11 @@ const TextArea = styled.textarea<{ $hasError?: boolean }>`
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.text.tertiary};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: ${({ theme }) => theme.spacing.lg};
+    min-height: 180px;
   }
 `;
 
@@ -195,8 +212,9 @@ const SubmitButton = styled(motion.button)`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: 0.5rem 0.875rem;
-    font-size: ${({ theme }) => theme.typography.fontSize.sm};
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
+    font-size: ${({ theme }) => theme.typography.fontSize.base};
+    min-height: 3.5rem;
   }
 `;
 
@@ -224,8 +242,9 @@ const ResetButton = styled(motion.button)`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: 0.5rem 0.875rem;
-    font-size: ${({ theme }) => theme.typography.fontSize.sm};
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
+    font-size: ${({ theme }) => theme.typography.fontSize.base};
+    min-height: 3.5rem;
   }
 `;
 

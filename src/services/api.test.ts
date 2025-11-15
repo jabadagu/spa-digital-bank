@@ -21,6 +21,8 @@ jest.mock('@/i18n/config', () => ({
 describe('ApiService', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    // Limpiar cache antes de cada test
+    (apiService as any).clearProductsCache();
     // Mock Math.random para hacer predecibles los tests de submitContactForm
     jest.spyOn(Math, 'random').mockReturnValue(0.5); // > 0.3, será success
     // Mock setTimeout para que no haga delay real en tests
@@ -55,6 +57,32 @@ describe('ApiService', () => {
       const products = await apiService.getProducts();
       expect(products).toEqual(mockData);
       expect(mockedAxios.get).toHaveBeenCalledWith('mock/products.json');
+    });
+
+    test('uses cache on subsequent calls', async () => {
+      const mockData = [
+        {
+          id: '1',
+          title: 'Test Product',
+          shortDescription: 'Short desc',
+          description: 'Full description',
+          image: 'test.jpg',
+          category: 'Cuentas',
+          features: ['feature1'],
+        },
+      ];
+
+      mockedAxios.get.mockResolvedValueOnce({ data: mockData });
+
+      // Primera llamada - debe hacer petición HTTP
+      const products1 = await apiService.getProducts();
+      expect(products1).toEqual(mockData);
+      expect(mockedAxios.get).toHaveBeenCalledTimes(1);
+
+      // Segunda llamada - debe usar cache
+      const products2 = await apiService.getProducts();
+      expect(products2).toEqual(mockData);
+      expect(mockedAxios.get).toHaveBeenCalledTimes(1); // No debe hacer nueva petición
     });
 
     test('throws error when response is not ok', async () => {
@@ -109,6 +137,20 @@ describe('ApiService', () => {
     test('returns null when id does not exist', async () => {
       const product = await apiService.getProductById('999');
       expect(product).toBeNull();
+    });
+
+    test('uses cache efficiently - multiple getProductById calls should only make one HTTP request', async () => {
+      // Múltiples llamadas a getProductById deben usar el mismo cache
+      const product1 = await apiService.getProductById('1');
+      const product2 = await apiService.getProductById('2');
+      const product3 = await apiService.getProductById('1'); // Repetir ID
+
+      expect(product1).toEqual(mockProducts[0]);
+      expect(product2).toEqual(mockProducts[1]);
+      expect(product3).toEqual(mockProducts[0]);
+
+      // Solo debe haber hecho 1 petición HTTP para cargar todos los productos
+      expect(mockedAxios.get).toHaveBeenCalledTimes(1);
     });
 
     test('throws error when getProducts fails', async () => {

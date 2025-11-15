@@ -192,15 +192,25 @@ export const NavBar = () => {
 
   const handleLanguageChange = (lang: string) => {
     i18n.changeLanguage(lang);
+    // Cerrar el menú móvil después de cambiar idioma
+    if (menuOpen) {
+      setMenuOpen(false);
+    }
   };
 
-  // useEffect(() => {
-  //   // Close the mobile menu when the route changes, but only if it's currently open
-  //   // to avoid triggering an unnecessary state update and cascading renders.
-  //   if (menuOpen) {
-  //     setMenuOpen(false);
-  //   }
-  // }, [location, menuOpen]);
+  const handleLinkClick = () => {
+    // Cerrar el menú móvil al hacer clic en un enlace
+    if (menuOpen) {
+      setMenuOpen(false);
+    }
+  };
+
+  const handleLogoClick = () => {
+    // Cerrar el menú móvil al hacer clic en el logo
+    if (menuOpen) {
+      setMenuOpen(false);
+    }
+  };
 
   return (
     <Nav
@@ -210,13 +220,19 @@ export const NavBar = () => {
     >
       <Container>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Logo to="/">{t('app.name')}</Logo>
+          <Logo to="/" onClick={handleLogoClick}>
+            {t('app.name')}
+          </Logo>
         </motion.div>
         <RightSection $isOpen={menuOpen}>
-          <NavLink to="/" $isActive={location.pathname === '/'}>
+          <NavLink to="/" $isActive={location.pathname === '/'} onClick={handleLinkClick}>
             {t('nav.home')}
           </NavLink>
-          <NavLink to="/contact" $isActive={location.pathname === '/contact'}>
+          <NavLink
+            to="/contact"
+            $isActive={location.pathname === '/contact'}
+            onClick={handleLinkClick}
+          >
             {t('nav.contact')}
           </NavLink>
           <Controls>
