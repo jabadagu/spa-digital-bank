@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "contact": "Contacto",
+    "menuToggle": "Alternar menú"
+  },
+  "home": {
+    "title": "Nuestros Productos",
+    "subtitle": "Descubre las mejores opciones para tus necesidades financieras",
+    "viewMore": "Ver más",
+    "loading": "Cargando productos...",
+    "error": "Error al cargar los productos",
+    "retry": "Intentar nuevamente"
+  },
+  "product": {
+    "back": "← Volver a productos",
+    "notFound": "Producto no encontrado",
+    "features": "Características principales"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos aquí para ayudarte. Envíanos tu consulta y te responderemos pronto.",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Email",
+      "documentType": "Tipo de documento",
+      "documentNumber": "Número de documento",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "required": "*",
+      "selectType": "Selecciona un tipo",
+      "namePlaceholder": "Ingresa tu nombre completo",
+      "emailPlaceholder": "tu.email@ejemplo.com",
+      "documentPlaceholder": "12345678",
+      "subjectPlaceholder": "¿Sobre qué quieres consultar?",
+      "messagePlaceholder": "Escribe tu mensaje aquí...",
+      "clear": "Limpiar",
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando..."
+    },
+    "validation": {
+      "nameRequired": "El nombre es requerido",
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "emailRequired": "El email es requerido",
+      "emailInvalid": "El email no es válido",
+      "documentTypeRequired": "El tipo de documento es requerido",
+      "documentNumberRequired": "El número de documento es requerido",
+      "documentNumberMin": "El número de documento debe tener al menos 5 caracteres",
+      "subjectRequired": "El asunto es requerido",
+      "subjectMin": "El asunto debe tener al menos 3 caracteres",
+      "messageRequired": "El mensaje es requerido",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres"
+    },
+    "modal": {
+      "success": "¡Éxito!",
+      "error": "Error",
+      "close": "Cerrar"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "about": "Acerca de",
+    "aboutText": "Tu banco digital de confianza, ofreciendo soluciones financieras innovadoras.",
+    "services": "Servicios",
+    "legal": "Legal",
+    "privacy": "Privacidad",
+    "terms": "Términos y condiciones",
+    "accounts": "Cuentas",
+    "cards": "Tarjetas",
+    "loans": "Préstamos",
+    "investments": "Inversiones"
+  },
+  "app": {
+    "name": "Banco Digital"
+  },
+  "api": {
+    "successMessage": "Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto.",
+    "errorMessage": "Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente más tarde.",
+    "connectionError": "Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.",
+    "loadProductsError": "Error al cargar productos",
+    "errors": {
+      "badRequest": "Los datos enviados no son válidos",
+      "unauthorized": "Necesitas autenticarte para acceder a este recurso",
+      "forbidden": "No tienes permisos para realizar esta acción",
+      "notFound": "El recurso solicitado no fue encontrado",
+      "timeout": "La solicitud tardó demasiado tiempo en responder",
+      "tooManyRequests": "Has realizado demasiadas solicitudes, intenta más tarde",
+      "serverError": "Error interno del servidor, intenta más tarde",
+      "serviceUnavailable": "El servicio no está disponible temporalmente",
+      "networkError": "Error de conexión. Verifica tu conexión a internet",
+      "requestConfig": "Error al procesar la solicitud",
+      "unknown": "Ha ocurrido un error inesperado"
+    }
+  },
+  "pagination": {
+    "label": "Paginación",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "page": "Página",
+    "of": "de"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro"
+  }
+}

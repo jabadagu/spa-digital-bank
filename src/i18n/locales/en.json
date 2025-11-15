@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Home",
+    "contact": "Contact",
+    "menuToggle": "Toggle menu"
+  },
+  "home": {
+    "title": "Our Products",
+    "subtitle": "Discover the best options for your financial needs",
+    "viewMore": "View more",
+    "loading": "Loading products...",
+    "error": "Error loading products",
+    "retry": "Try again"
+  },
+  "product": {
+    "back": "← Back to products",
+    "notFound": "Product not found",
+    "features": "Main features"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to help you. Send us your inquiry and we will respond soon.",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "documentType": "Document type",
+      "documentNumber": "Document number",
+      "subject": "Subject",
+      "message": "Message",
+      "required": "*",
+      "selectType": "Select a type",
+      "namePlaceholder": "Enter your full name",
+      "emailPlaceholder": "your.email@example.com",
+      "documentPlaceholder": "12345678",
+      "subjectPlaceholder": "What would you like to inquire about?",
+      "messagePlaceholder": "Write your message here...",
+      "clear": "Clear",
+      "submit": "Send message",
+      "submitting": "Sending..."
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is not valid",
+      "documentTypeRequired": "Document type is required",
+      "documentNumberRequired": "Document number is required",
+      "documentNumberMin": "Document number must be at least 5 characters",
+      "subjectRequired": "Subject is required",
+      "subjectMin": "Subject must be at least 3 characters",
+      "messageRequired": "Message is required",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "modal": {
+      "success": "Success!",
+      "error": "Error",
+      "close": "Close"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "about": "About",
+    "aboutText": "Your trusted digital bank, offering innovative financial solutions.",
+    "services": "Services",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms and conditions",
+    "accounts": "Accounts",
+    "cards": "Cards",
+    "loans": "Loans",
+    "investments": "Investments"
+  },
+  "app": {
+    "name": "Digital Bank"
+  },
+  "api": {
+    "successMessage": "Your message has been sent successfully. We will contact you soon.",
+    "errorMessage": "There was an error sending your message. Please try again later.",
+    "connectionError": "Connection error. Please check your internet connection and try again.",
+    "loadProductsError": "Error loading products",
+    "errors": {
+      "badRequest": "The sent data is not valid",
+      "unauthorized": "You need to authenticate to access this resource",
+      "forbidden": "You don't have permission to perform this action",
+      "notFound": "The requested resource was not found",
+      "timeout": "The request took too long to respond",
+      "tooManyRequests": "You have made too many requests, try again later",
+      "serverError": "Internal server error, try again later",
+      "serviceUnavailable": "The service is temporarily unavailable",
+      "networkError": "Connection error. Check your internet connection",
+      "requestConfig": "Error processing the request",
+      "unknown": "An unexpected error has occurred"
+    }
+  },
+  "pagination": {
+    "label": "Pagination",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "of": "of"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  }
+}

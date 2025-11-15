@@ -1,0 +1,137 @@
+[
+  {
+    "id": "1",
+    "title": "Cuenta Corriente Premium",
+    "description": "Cuenta corriente diseñada para clientes que buscan beneficios exclusivos y servicios premium. Incluye tarjeta de débito sin costo, transferencias ilimitadas, y acceso a nuestra red de cajeros sin comisiones.",
+    "shortDescription": "Cuenta corriente con beneficios exclusivos y servicios premium para clientes exigentes.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+    "category": "Cuentas",
+    "features": [
+      "Tarjeta de débito sin costo",
+      "Transferencias ilimitadas",
+      "Acceso a cajeros sin comisiones",
+      "Atención personalizada 24/7",
+      "Seguro de protección de compras"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Tarjeta de Crédito Gold",
+    "description": "Tarjeta de crédito con programa de recompensas y beneficios exclusivos. Acumula puntos en cada compra que puedes canjear por viajes, productos o descuentos. Sin costo de mantenimiento el primer año.",
+    "shortDescription": "Tarjeta de crédito con programa de recompensas y beneficios exclusivos para tus compras.",
+    "image": "https://images.unsplash.com/photo-1604594849809-dfedbc827105?w=400&h=300&fit=crop",
+    "category": "Tarjetas",
+    "features": [
+      "Programa de puntos y recompensas",
+      "Sin costo de mantenimiento primer año",
+      "Seguro de viaje incluido",
+      "Acceso a salas VIP en aeropuertos",
+      "Protección de compras extendida"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Préstamo Personal Express",
+    "description": "Préstamo personal con aprobación rápida y tasas competitivas. Ideal para proyectos personales, viajes, o cualquier necesidad de financiamiento. Proceso 100% digital y respuesta en 24 horas.",
+    "shortDescription": "Préstamo personal con aprobación rápida, tasas competitivas y proceso 100% digital.",
+    "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop",
+    "category": "Préstamos",
+    "features": [
+      "Aprobación en 24 horas",
+      "Proceso 100% digital",
+      "Tasas competitivas",
+      "Plazos flexibles hasta 60 meses",
+      "Sin comisiones ocultas"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Cuenta de Ahorros Plus",
+    "description": "Cuenta de ahorros con rendimientos atractivos y flexibilidad total. Retira tu dinero cuando lo necesites sin penalizaciones. Ideal para construir tu patrimonio de forma segura.",
+    "shortDescription": "Cuenta de ahorros con rendimientos atractivos y total flexibilidad para tus ahorros.",
+    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop",
+    "category": "Ahorros",
+    "features": [
+      "Rendimientos competitivos",
+      "Retiros sin penalización",
+      "Aplicación móvil intuitiva",
+      "Seguro de depósitos",
+      "Sin saldo mínimo"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Inversión a Plazo Fijo",
+    "description": "Inversión segura con rendimientos garantizados. Elige el plazo que mejor se adapte a tus necesidades financieras, desde 30 días hasta 5 años. Protege y haz crecer tu capital.",
+    "shortDescription": "Inversión segura con rendimientos garantizados y plazos flexibles para tu capital.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+    "category": "Inversiones",
+    "features": [
+      "Rendimientos garantizados",
+      "Plazos desde 30 días hasta 5 años",
+      "Protección total del capital",
+      "Renovación automática opcional",
+      "Asesoría personalizada"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Seguro de Vida Familiar",
+    "description": "Protege a tu familia con nuestro seguro de vida completo. Cobertura amplia que incluye protección por fallecimiento, invalidez total y permanente, y beneficios adicionales para tus seres queridos.",
+    "shortDescription": "Seguro de vida completo para proteger a tu familia con cobertura amplia y beneficios adicionales.",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop",
+    "category": "Seguros",
+    "features": [
+      "Cobertura por fallecimiento",
+      "Protección por invalidez",
+      "Primas competitivas",
+      "Beneficiarios múltiples",
+      "Asistencia funeraria incluida"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Tarjeta de Débito Internacional",
+    "description": "Tarjeta de débito diseñada para viajeros frecuentes. Realiza compras y retiros en el extranjero sin comisiones adicionales. Controla tus gastos desde nuestra app móvil.",
+    "shortDescription": "Tarjeta de débito ideal para viajeros, sin comisiones en el extranjero y control total desde la app.",
+    "image": "https://images.unsplash.com/photo-1515165562835-cf7d6f0f3b4c?w=400&h=300&fit=crop",
+    "category": "Tarjetas",
+    "features": [
+      "Sin comisiones en el extranjero",
+      "Control de gastos desde la app",
+      "Aceptada mundialmente",
+      "Notificaciones en tiempo real",
+      "Bloqueo y desbloqueo instantáneo"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Préstamo Hipotecario",
+    "description": "Préstamo hipotecario con tasas competitivas y plazos flexibles para la compra de tu vivienda. Asesoría personalizada durante todo el proceso y opciones de pago adaptadas a tus necesidades.",
+    "shortDescription": "Préstamo hipotecario con tasas competitivas y asesoría personalizada para comprar tu vivienda.",
+    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&h=300&fit=crop",
+    "category": "Préstamos",
+    "features": [
+      "Tasas competitivas",
+      "Plazos flexibles hasta 30 años",
+      "Asesoría personalizada",
+      "Opciones de pago adaptadas",
+      "Preaprobación rápida"
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Cuenta Empresarial",
+    "description": "Cuenta bancaria diseñada para pequeñas y medianas empresas. Ofrece herramientas de gestión financiera, múltiples usuarios, y servicios exclusivos para facilitar la administración de tu negocio.",
+    "shortDescription": "Cuenta bancaria para pymes con herramientas de gestión y servicios exclusivos para tu negocio.",
+    "image": "https://images.unsplash.com/photo-1556741533-f6acd647d2fb?w=400&h=300&fit=crop",
+    "category": "Cuentas",
+    "features": [
+      "Múltiples usuarios autorizados",
+      "Herramientas de gestión financiera",
+      "Servicios exclusivos para empresas",
+      "Integración con software contable",
+      "Atención personalizada"
+    ]
+  }
+]
