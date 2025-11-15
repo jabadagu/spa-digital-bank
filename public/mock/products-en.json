@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "title": "Premium Checking Account",
+    "description": "Checking account designed for clients seeking exclusive benefits and premium services. Includes free debit card, unlimited transfers, and access to our ATM network without fees.",
+    "shortDescription": "Checking account with exclusive benefits and premium services for demanding clients.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+    "category": "Accounts",
+    "features": [
+      "Free debit card",
+      "Unlimited transfers",
+      "Fee-free ATM access",
+      "24/7 personalized service",
+      "Purchase protection insurance"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Gold Credit Card",
+    "description": "Credit card with rewards program and exclusive benefits. Earn points on every purchase that you can redeem for travel, products or discounts. No maintenance fee for the first year.",
+    "shortDescription": "Credit card with rewards program and exclusive benefits for your purchases.",
+    "image": "https://images.unsplash.com/photo-1604594849809-dfedbc827105?w=400&h=300&fit=crop",
+    "category": "Cards",
+    "features": [
+      "Points and rewards program",
+      "No maintenance fee first year",
+      "Travel insurance included",
+      "Airport VIP lounge access",
+      "Extended purchase protection"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Mortgage Loan",
+    "description": "Finance your home purchase with our mortgage loan featuring the best market rates. Quick approval process and flexible requirements to make your dream home a reality.",
+    "shortDescription": "Mortgage loan with the best rates to finance your dream home.",
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop",
+    "category": "Loans",
+    "features": [
+      "Competitive market rates",
+      "Up to 30-year financing",
+      "48-hour approval",
+      "No origination fees",
+      "Insurance included"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "High-Yield Savings Account",
+    "description": "Grow your money with our savings account that offers the best market returns. No minimum opening amount and immediate availability of your funds when you need them.",
+    "shortDescription": "Savings account with high yields and no minimum opening amounts.",
+    "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop",
+    "category": "Accounts",
+    "features": [
+      "Competitive returns",
+      "No minimum opening amount",
+      "Immediate availability",
+      "Digital statements",
+      "Mobile app included"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Family Life Insurance",
+    "description": "Protect your family with our family life insurance that offers comprehensive coverage and additional benefits. Includes disability coverage, major medical expenses, and 24-hour assistance services.",
+    "shortDescription": "Family life insurance with comprehensive coverage and additional benefits for your peace of mind.",
+    "image": "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=400&h=300&fit=crop",
+    "category": "Insurance",
+    "features": [
+      "Comprehensive family coverage",
+      "Disability benefits",
+      "Major medical expenses",
+      "24-hour assistance",
+      "Affordable premiums"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Investment Funds",
+    "description": "Diversify your portfolio with our investment funds managed by experts. Conservative, moderate, and aggressive options according to your risk profile. Start investing from any amount.",
+    "shortDescription": "Diversified investment funds to grow your wealth intelligently.",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop",
+    "category": "Investments",
+    "features": [
+      "Expert management",
+      "Different risk profiles",
+      "Start from any amount",
+      "Monthly reports",
+      "Personalized advice"
+    ]
+  }
+]

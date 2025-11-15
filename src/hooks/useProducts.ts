@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { apiService } from '@/services/api';
-import { translateProducts } from '@/utils/translateProduct';
 import type { Product } from '@/types';
 
 interface UseProductsReturn {
@@ -21,29 +20,19 @@ export const useProducts = (): UseProductsReturn => {
     try {
       setLoading(true);
       setError(null);
-      const data = await apiService.getProducts();
-      const translated = translateProducts(data);
-      setProducts(translated);
+      // Pasar el idioma actual al servicio API
+      const data = await apiService.getProducts(i18n.language);
+      setProducts(data);
     } catch (err) {
       setError(err instanceof Error ? err : new Error('Error desconocido'));
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [i18n.language]);
 
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
-
-  // Re-traducir productos cuando cambie el idioma
-  useEffect(() => {
-    if (products.length > 0) {
-      const rawProducts = products.map(p => ({ ...p, category: p.category }));
-      const translated = translateProducts(rawProducts);
-      setProducts(translated);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [i18n.language]);
 
   return {
     products,

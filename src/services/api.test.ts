@@ -5,6 +5,11 @@ import { apiService } from './api';
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
+// Mock de utils/env
+jest.mock('@/utils/env', () => ({
+  getApiBaseUrl: () => '/spa-digital-bank/',
+}));
+
 // Mock de i18n
 jest.mock('@/i18n/config', () => ({
   t: jest.fn((key: string) => {
@@ -16,6 +21,7 @@ jest.mock('@/i18n/config', () => ({
     };
     return translations[key] || key;
   }),
+  language: 'es', // Mock del idioma actual
 }));
 
 describe('ApiService', () => {
@@ -35,7 +41,7 @@ describe('ApiService', () => {
   });
 
   describe('getProducts', () => {
-    test('returns parsed json when response is ok', async () => {
+    test('returns parsed json when response is ok (default Spanish)', async () => {
       const mockData = [
         {
           id: '1',
@@ -54,7 +60,29 @@ describe('ApiService', () => {
 
       const products = await apiService.getProducts();
       expect(products).toEqual(mockData);
-      expect(mockedAxios.get).toHaveBeenCalledWith('mock/products.json');
+      expect(mockedAxios.get).toHaveBeenCalledWith('/spa-digital-bank/mock/products-es.json');
+    });
+
+    test('returns English products when language is en', async () => {
+      const mockData = [
+        {
+          id: '1',
+          title: 'Test Product EN',
+          shortDescription: 'Short desc EN',
+          description: 'Full description EN',
+          image: 'test.jpg',
+          category: 'Accounts',
+          features: ['feature1'],
+        },
+      ];
+
+      mockedAxios.get.mockResolvedValueOnce({
+        data: mockData,
+      });
+
+      const products = await apiService.getProducts('en');
+      expect(products).toEqual(mockData);
+      expect(mockedAxios.get).toHaveBeenCalledWith('/spa-digital-bank/mock/products-en.json');
     });
 
     test('makes HTTP request on each call', async () => {
@@ -149,6 +177,14 @@ describe('ApiService', () => {
 
       // Debe hacer una petición HTTP por cada llamada a getProductById
       expect(mockedAxios.get).toHaveBeenCalledTimes(3);
+      // Verificar que todas las llamadas usan el archivo en español por defecto
+      expect(mockedAxios.get).toHaveBeenCalledWith('/spa-digital-bank/mock/products-es.json');
+    });
+
+    test('uses correct language file when specified', async () => {
+      const product = await apiService.getProductById('1', 'en');
+      expect(product).toEqual(mockProducts[0]);
+      expect(mockedAxios.get).toHaveBeenCalledWith('/spa-digital-bank/mock/products-en.json');
     });
 
     test('throws error when getProducts fails', async () => {

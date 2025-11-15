@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "title": "Cuenta Corriente Premium",
+    "description": "Cuenta corriente diseñada para clientes que buscan beneficios exclusivos y servicios premium. Incluye tarjeta de débito sin costo, transferencias ilimitadas, y acceso a nuestra red de cajeros sin comisiones.",
+    "shortDescription": "Cuenta corriente con beneficios exclusivos y servicios premium para clientes exigentes.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+    "category": "Cuentas",
+    "features": [
+      "Tarjeta de débito sin costo",
+      "Transferencias ilimitadas",
+      "Acceso a cajeros sin comisiones",
+      "Atención personalizada 24/7",
+      "Seguro de protección de compras"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Tarjeta de Crédito Gold",
+    "description": "Tarjeta de crédito con programa de recompensas y beneficios exclusivos. Acumula puntos en cada compra que puedes canjear por viajes, productos o descuentos. Sin costo de mantenimiento el primer año.",
+    "shortDescription": "Tarjeta de crédito con programa de recompensas y beneficios exclusivos para tus compras.",
+    "image": "https://images.unsplash.com/photo-1604594849809-dfedbc827105?w=400&h=300&fit=crop",
+    "category": "Tarjetas",
+    "features": [
+      "Programa de puntos y recompensas",
+      "Sin costo de mantenimiento primer año",
+      "Seguro de viaje incluido",
+      "Acceso a salas VIP en aeropuertos",
+      "Protección de compras extendida"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Préstamo Hipotecario",
+    "description": "Financia la compra de tu hogar con nuestro préstamo hipotecario con las mejores tasas del mercado. Proceso de aprobación rápido y requisitos flexibles para hacer realidad el sueño de tu casa propia.",
+    "shortDescription": "Préstamo hipotecario con las mejores tasas para financiar tu hogar soñado.",
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop",
+    "category": "Préstamos",
+    "features": [
+      "Tasas competitivas del mercado",
+      "Hasta 30 años de financiamiento",
+      "Aprobación en 48 horas",
+      "Sin comisión de apertura",
+      "Seguros incluidos"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Cuenta de Ahorros Rentable",
+    "description": "Haz crecer tu dinero con nuestra cuenta de ahorros que te ofrece los mejores rendimientos del mercado. Sin montos mínimos de apertura y con disponibilidad inmediata de tus fondos cuando los necesites.",
+    "shortDescription": "Cuenta de ahorros con altos rendimientos y sin montos mínimos de apertura.",
+    "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop",
+    "category": "Cuentas",
+    "features": [
+      "Rendimientos competitivos",
+      "Sin monto mínimo de apertura",
+      "Disponibilidad inmediata",
+      "Estado de cuenta digital",
+      "App móvil incluida"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Seguro de Vida Familiar",
+    "description": "Protege a tu familia con nuestro seguro de vida familiar que ofrece cobertura amplia y beneficios adicionales. Incluye cobertura por invalidez, gastos médicos mayores y servicios de asistencia las 24 horas.",
+    "shortDescription": "Seguro de vida familiar con cobertura amplia y beneficios adicionales para tu tranquilidad.",
+    "image": "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=400&h=300&fit=crop",
+    "category": "Seguros",
+    "features": [
+      "Cobertura amplia familiar",
+      "Beneficios por invalidez",
+      "Gastos médicos mayores",
+      "Asistencia 24 horas",
+      "Primas accesibles"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Inversión en Fondos",
+    "description": "Diversifica tu portafolio con nuestros fondos de inversión administrados por expertos. Opciones conservadoras, moderadas y agresivas según tu perfil de riesgo. Comienza a invertir desde cualquier monto.",
+    "shortDescription": "Fondos de inversión diversificados para hacer crecer tu patrimonio de forma inteligente.",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop",
+    "category": "Inversiones",
+    "features": [
+      "Administración por expertos",
+      "Diferentes perfiles de riesgo",
+      "Inicio desde cualquier monto",
+      "Reportes mensuales",
+      "Asesoría personalizada"
+    ]
+  }
+]
