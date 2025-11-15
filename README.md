@@ -11,6 +11,7 @@ Una aplicación web moderna para servicios bancarios digitales construida con Re
 - **🧪 Testing Completo**: >92% de cobertura de código
 - **♿ Accesibilidad**: Cumple estándares WCAG
 - **🔒 Validación**: Formularios con validación robusta usando Zod
+- **🚀 Deploy Automático**: Integración continua con GitHub Pages
 
 ## 🚀 Tecnologías
 
@@ -20,6 +21,11 @@ Una aplicación web moderna para servicios bancarios digitales construida con Re
 - **Linting**: ESLint, TypeScript strict
 - **i18n**: react-i18next
 - **Formularios**: react-hook-form + Zod
+- **Deploy**: GitHub Pages + GitHub Actions
+
+## 🌐 Demo Live
+
+🔗 **[Ver aplicación en vivo](https://jabadagu.github.io/)**
 
 ## 📦 Instalación
 
@@ -38,6 +44,22 @@ npm test
 
 # Build para producción
 npm run build
+
+# Deploy a GitHub Pages
+npm run deploy
+```
+
+## 🚀 Despliegue
+
+### Despliegue Automático
+Cada push a la rama `main` activa automáticamente:
+1. Ejecución de tests
+2. Build de la aplicación
+3. Deploy a GitHub Pages
+
+### Despliegue Manual
+```bash
+npm run deploy
 ```
 
 ## 🏗️ Estructura del Proyecto

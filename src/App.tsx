@@ -23,7 +23,7 @@ function App() {
   return (
     <ThemeProvider>
       <GlobalStyles />
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <AppContainer>
           <NavBar />
           <MainContent>
