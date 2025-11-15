@@ -1,12 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-// Mock de react-router-dom para evitar problemas con routing en tests
+// Mock de react-router-dom para usar la ruta correcta con basename
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: () => ({
-    pathname: '/',
+    pathname: '/spa-digital-bank/',
   }),
+  BrowserRouter: ({ children, basename }: { children: React.ReactNode; basename?: string }) => {
+    const MemoryRouter = jest.requireActual('react-router-dom').MemoryRouter;
+    return (
+      <MemoryRouter initialEntries={[basename || '/spa-digital-bank/']}>{children}</MemoryRouter>
+    );
+  },
 }));
 
 describe('App Component', () => {
