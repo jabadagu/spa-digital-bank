@@ -88,5 +88,35 @@
       "Monthly reports",
       "Personalized advice"
     ]
+  },
+  {
+    "id": "7",
+    "title": "Personal Loan",
+    "description": "Get the money you need for your personal projects with our flexible personal loan. Preferential rates, no collateral required, and online approval. Perfect for studies, travel, renovations, or any personal goal.",
+    "shortDescription": "Flexible personal loan with preferential rates and quick online approval.",
+    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop",
+    "category": "Loans",
+    "features": [
+      "Online approval",
+      "No collateral required",
+      "Preferential rates",
+      "Flexible terms up to 60 months",
+      "Free use of funds"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Business Account",
+    "description": "Comprehensive banking solution for businesses of all sizes. Includes checking account, payroll services, mass payments, and business online banking platform. Financial tools to grow your business.",
+    "shortDescription": "Business banking account with comprehensive services to grow your business.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    "category": "Accounts",
+    "features": [
+      "Business banking platform",
+      "Payroll services",
+      "Mass payments",
+      "Business credit line",
+      "Dedicated business advisor"
+    ]
   }
 ]

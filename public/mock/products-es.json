@@ -88,5 +88,35 @@
       "Reportes mensuales",
       "Asesoría personalizada"
     ]
+  },
+  {
+    "id": "7",
+    "title": "Préstamo Personal",
+    "description": "Obtén el dinero que necesitas para tus proyectos personales con nuestro préstamo personal flexible. Tasas preferenciales, sin garantías requeridas y aprobación en línea. Ideal para estudios, viajes, reformas o cualquier meta personal.",
+    "shortDescription": "Préstamo personal flexible con tasas preferenciales y aprobación rápida en línea.",
+    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop",
+    "category": "Préstamos",
+    "features": [
+      "Aprobación en línea",
+      "Sin garantías requeridas",
+      "Tasas preferenciales",
+      "Plazos flexibles hasta 60 meses",
+      "Uso libre del dinero"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Cuenta Empresarial",
+    "description": "Solución bancaria integral para empresas de todos los tamaños. Incluye cuenta corriente, servicios de nómina, pagos masivos, y plataforma de banca en línea empresarial. Herramientas financieras para hacer crecer tu negocio.",
+    "shortDescription": "Cuenta bancaria empresarial con servicios integrales para hacer crecer tu negocio.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    "category": "Cuentas",
+    "features": [
+      "Plataforma de banca empresarial",
+      "Servicios de nómina",
+      "Pagos masivos",
+      "Línea de crédito empresarial",
+      "Asesor de negocios dedicado"
+    ]
   }
 ]
